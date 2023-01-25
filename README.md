@@ -4,7 +4,7 @@ Démonstration du traitement asynchrone bloquant / non-bloquant en JavaScript av
 
 Exemple de résultat obtenu :
 ```
--- Traitement de commandes de façon bloquante (avec la commande "await") :
+-- Traitement de commandes de façon bloquante (avec "await") :
 
 09:52:05:288 => Commande #1A -> Prise de commande -> 💰💰
 09:52:06:291 => Commande #1A -> Commande servie -> 🍔🍔

@@ -1,3 +1,5 @@
+"use strict";
+
 function hh_mm_ss_mls() {
     //formate l'heure courante
 
@@ -15,7 +17,7 @@ function hh_mm_ss_mls() {
         + secondes + ":" + date.getMilliseconds();
 }
 
-const DUREE_PREPARATION_HAMBURGER = 500;
+const DUREE_PREPARATION_HAMBURGER = 100;
 
 async function traiter_commande(numero_commande, nombre_hamburgers) {
     //opération asynchrone simulée à l'aide de setTimeout
@@ -54,7 +56,7 @@ async function traiter_commande(numero_commande, nombre_hamburgers) {
 
             console.log(commande_traitee);
 
-            resolve(result);
+            resolve();
 
         }, nombre_hamburgers * DUREE_PREPARATION_HAMBURGER);
     });
@@ -63,7 +65,7 @@ async function traiter_commande(numero_commande, nombre_hamburgers) {
 async function main() {
 
     let i = 0;
-    console.log("-- Traitement de commandes de façon bloquante (avec 'await') :\n");
+    console.log('\n-- Traitement de commandes de façon bloquante / séquentielle (avec "await") :\n');
 
 
     while (i < 4) {
@@ -73,15 +75,14 @@ async function main() {
     }
 
     let j = 0;
-    console.log("-- Traitement de commandes de façon non-bloquante (sans 'await') :\n");
+    console.log('\n-- Traitement de commandes de façon non-bloquante / parallèle (sans "await") :\n');
 
     while (j < 4) {
         let nombre_hamburgers = Math.floor(1 + Math.random() * 6);//nombre d'hamburgers entre 1 et 6
-        traiter_commande(`${j + 1}B`, nombre_hamburgers).then(result => console.log(result));
+        traiter_commande(`${j + 1}B`, nombre_hamburgers);
         j++;
     }
 
-    console.log('\n');
 }
 
 main();

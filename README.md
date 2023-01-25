@@ -2,7 +2,8 @@
 
 Démonstration du traitement asynchrone bloquant / non-bloquant en JavaScript avec Callback, Promise et Async / Await.
 
-Le programme démontre le traitement d'opérations asynchrones, chacun de durée différente, de 2 façons : 
+Le programme démontre le traitement d'opérations asynchrones, chacun de durée différente, de 2 façons :
+
 - bloquante (avec _await_),
 - non bloquante, sans _await_).
 
@@ -12,6 +13,7 @@ La durée du traitement d'une commande correspond au nombre d'hamburgers contenu
 - Dans le second cas (commandes "B"), chaque opération est traitée de façon parallèle (non concurrente) et non bloquante par des sous-processus. Chaque opératin est mise dans la boucle d'événements de Node.js ("Event Loop"). Lorsqu'une opération est traitée, son callback est appelé. L'ordre de résolution dépend donc de la durée de chaque opération. Les opérations les plus courtes sont résolues en premières.
 
 Exemple de résultat obtenu :
+
 ```
 -- Traitement de commandes de façon bloquante / séquentielle (avec "await") :
 
@@ -35,11 +37,12 @@ Exemple de résultat obtenu :
 13:26:09:101 => Commande #1B -> Commande servie -> 🍔🍔🍔🍔🍔
 13:26:09:102 => Commande #2B -> Commande servie -> 🍔🍔🍔🍔🍔
 ```
+
 --
 
 <img src="https://sherpa.one/images/sherpa-logotype.png" width="120px">
 
-__Alexandre Leroux__
+**Alexandre Leroux**
 
 _Enseignant / Formateur_<br>
 _Développeur logiciel web & mobile_

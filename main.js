@@ -1,4 +1,6 @@
 function hh_mm_ss_mls() {
+    //formate l'heure courante
+
     const date = new Date();
     let heures = date.getHours();
     if (heures < 10) heures = "0" + heures;
@@ -14,6 +16,7 @@ function hh_mm_ss_mls() {
 }
 
 async function traiter_commande(numero_commande, nb_hamburgers) {
+    //opération asynchrone simulée à l'aide de setTimeout
 
     if (numero_commande < 10) numero_commande = "0" + numero_commande;
 
@@ -26,7 +29,7 @@ async function traiter_commande(numero_commande, nb_hamburgers) {
 
     console.log(`${hh_mm_ss_mls()} => Commande #${numero_commande} -> ${message}`);
 
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
         //la durée de traitement d'une commande est proportionnelle au nombre d'hamburgers commandés
         return setTimeout(() => {
             let i = 0;

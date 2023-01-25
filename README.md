@@ -7,6 +7,8 @@ Le programme démontre le traitement séquentiel et bloquant obtenu avec l'emplo
 - Dans le 1er cas, chaque opération est traitée dans le même fil d'exécution (processus unique), avant de passer au traitement de l'opération suivante (via "await"). Tant qu'une opération n'est pas résolue, la suivante n'est pas entamée.
 - Dans le second cas, chaque opération est traitée de façon parallèle (non concurrente) et non bloquante dans des sous-processus, les opérations les plus courtes sont résolues en premières.
 
+La durée du traitement d'une commande correspond au nombre d'hamburgers multiplié par 500ms.
+
 Exemple de résultat obtenu :
 ```
 -- Traitement de commandes de façon bloquante (avec "await") :
